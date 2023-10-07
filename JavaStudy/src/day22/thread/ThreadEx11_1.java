@@ -1,5 +1,5 @@
 package day22.thread;
-//pull test
+
 public class ThreadEx11_1 {
 //synchronized 예제
 	//공유 자원을 반환할 때까지 기다리는 메서드
