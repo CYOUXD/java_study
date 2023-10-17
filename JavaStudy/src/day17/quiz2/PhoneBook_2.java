@@ -30,6 +30,7 @@ public class PhoneBook_2 {
 			}else {
 				System.out.println("데이터가 없습니다.");
 			}
+			
 		}
 	}
 }
