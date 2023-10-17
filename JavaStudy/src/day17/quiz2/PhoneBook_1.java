@@ -37,7 +37,7 @@ public class PhoneBook_1 {
 	String savePath = "savefile/phonebook.sav";
 	//??????????? 경로를 이렇게만 만들면 더 앞쪽은 어떻게 설정하지?
 	
-	//2. 생성자 선언과 함께 객체 생성할 것 작성
+	//2. 객체 생성 - 생성자 선언과 함께 객체 생성할 것 작성
 	public PhoneBook_1() {
 		phoneBook = new HashMap<>();
 		
@@ -54,6 +54,7 @@ public class PhoneBook_1 {
 	
 	//3. phoneBook에 새로운 그룹을 추가하는 메서드
 	public void addGroup(String groupNames) {
+		//그룹명 중복 확인
 		if(!phoneBook.containsKey(groupNames)) {
 			//그룹명만 넣고 value는 장소만 만들어 줌
 			phoneBook.put(groupNames, new HashMap<String, String>());
@@ -62,7 +63,7 @@ public class PhoneBook_1 {
 	
 	//4. phoneBook의 모든 목록을 출력
 	public void printAll() {
-		//출력할 HashMap의 키를 가져와서 그 키와 value를 출력
+		//출력할 HashMap의 키를 가져와서 각 키와 value를 출력
 		Set<String> groupNames = phoneBook.keySet();
 		for(String groupName : groupNames) {
 			//그룹명 출력
@@ -70,6 +71,7 @@ public class PhoneBook_1 {
 			
 			//이름, 전화번호 출력
 			HashMap<String, String> nameAndNums = phoneBook.get(groupName);
+			//데이터 유무 확인
 			if(nameAndNums.size() == 0) {	//데이터가 없을 때
 				System.out.println("비어 있음");
 			}else {
